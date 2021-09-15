@@ -6,7 +6,7 @@ class SearchInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return Container(
       child: SizedBox(
         child: ConstrainedBox(
           constraints: BoxConstraints.tightFor(width: 300),
@@ -16,6 +16,9 @@ class SearchInput extends StatelessWidget {
               hintText: 'Search for articles',
               hintStyle: TextStyle(
                 color: kSearchField,
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderSide: const BorderSide(color: Colors.grey, width: 1.0),
               ),
             ),
             onChanged: (text) {
