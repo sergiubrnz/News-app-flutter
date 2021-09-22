@@ -1,15 +1,25 @@
 import 'package:flutter/material.dart';
 
-class NewsDetailsScreen extends StatefulWidget {
-  @override
-  _NewsDetailsScreenState createState() => _NewsDetailsScreenState();
-}
+class NewsDetailsScreen extends StatelessWidget {
+  final String? title;
+  final String? author;
+  final String? imageUrl;
+  final String? description;
 
-class _NewsDetailsScreenState extends State<NewsDetailsScreen> {
+  NewsDetailsScreen(
+    this.title,
+    this.author,
+    this.imageUrl,
+    this.description,
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text('News Details')),
+      appBar: AppBar(
+        title: Text(''),
+      ),
+      body: Container(),
     );
   }
 }

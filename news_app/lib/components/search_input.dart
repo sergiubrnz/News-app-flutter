@@ -6,29 +6,38 @@ class SearchInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: SizedBox(
-        child: ConstrainedBox(
-          constraints: BoxConstraints.tightFor(width: 300),
-          child: TextField(
-            decoration: InputDecoration(
-              prefixIcon: Icon(Icons.search_outlined),
-              hintText: 'Search for articles',
-              hintStyle: TextStyle(
-                color: kSearchField,
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderSide: const BorderSide(color: Colors.grey, width: 1.0),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Container(
+            child: ConstrainedBox(
+              constraints: BoxConstraints.tightFor(width: 300),
+              child: TextField(
+                decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.search_outlined),
+                  hintText: 'Search for articles',
+                  hintStyle: TextStyle(
+                    color: kSearchField,
+                  ),
+                  border: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      color: Colors.grey,
+                      width: 2.0,
+                    ),
+                  ),
+                ),
+                onChanged: (text) {
+                  if (text.length >= 3) {
+                    print(text);
+                  }
+                },
               ),
             ),
-            onChanged: (text) {
-              if (text.length >= 3) {
-                print(text);
-              }
-            },
           ),
         ),
-      ),
+      ],
     );
   }
 }

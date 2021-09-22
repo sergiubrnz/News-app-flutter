@@ -4,30 +4,39 @@ import 'package:news_app/utils/constants.dart';
 class NewsItem extends StatelessWidget {
   late final String title;
   late final String author;
+  late final String imageUrl;
 
-  NewsItem(this.title, this.author);
+  NewsItem(
+    this.title,
+    this.author,
+    this.imageUrl,
+  );
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 8,
+        vertical: 4,
+      ),
       child: Card(
         child: Row(
           children: [
             Expanded(
-              flex: 1,
+              flex: 2,
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(17.0),
                 child: AspectRatio(
                   aspectRatio: 1 / 1,
                   child: Image.network(
-                    'https://storage0.dms.mpinteractiv.ro/media/1/1481/22467/20249853/1/panourisolare-ss.jpg',
+                    imageUrl,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
             ),
             Expanded(
-              flex: 3,
+              flex: 5,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(

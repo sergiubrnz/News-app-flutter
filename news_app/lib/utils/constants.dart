@@ -13,3 +13,5 @@ const kBlueSecundary = Color(0x400E68C3);
 const kOrangeSecundary = Color(0x40C3540E);
 const kGreenSecundary = Color(0x4084C30E);
 const kPurpleSecundaryy = Color(0x406D3FB7);
+
+const kApiKey = '4270ac4b72504d49848ffd0be3ffe660';
