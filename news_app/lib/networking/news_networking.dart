@@ -5,7 +5,7 @@ import 'package:news_app/utils/news_model.dart';
 class ApiService {
   var client = http.Client();
 
-  Future<News> getNews(String query) async {
+  Future<News> getNews(var query) async {
     var response = await client.get(
       Uri.parse(
           'https://newsapi.org/v2/everything?q=$query&language=en&sortBy=publishedAt&apiKey=$kApiKey'),

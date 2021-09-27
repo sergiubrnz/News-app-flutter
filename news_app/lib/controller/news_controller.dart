@@ -6,14 +6,18 @@ class NewsControler extends GetxController {
   var newsList = List<Article>.empty(growable: true).obs;
   var isLoading = true.obs;
 
+  NewsControler();
+
   @override
   void onInit() {
     super.onInit();
-    getNews();
+    getNews('tesla');
   }
 
-  void getNews() async {
-    var news = await ApiService().getNews('tesla');
+  void getNews(String str) async {
+    isLoading(true);
+    newsList.clear();
+    var news = await ApiService().getNews(str);
 
     try {
       if (news != null) {
